@@ -1,5 +1,5 @@
 export class TestData {
-    日期 : string;
+    日期 : Date;
     名稱: string;
     檢體編號1: number;
     檢體編號2: number;

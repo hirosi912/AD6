@@ -5,10 +5,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 export const Approutes: Routes = [
   {
     path: '',
     component: FullComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: '/dashboard/dashboard1', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboards/dashboard.module#DashboardModule' },
